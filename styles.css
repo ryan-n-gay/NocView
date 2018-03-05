@@ -1,13 +1,14 @@
 html, body {
-  font-family: 'Source Sans Pro', sans-serif;
-height: 100%;
-padding: -1;
-margin: 0;
-background: #9e9e9e
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  padding: -1;
+  margin: 0;
+  background: #9e9e9e;
+  font-size: 1.2em;
 }
 
 header {
-height: 4em;
+  height: 4em;
 }
 
 h1 {
@@ -21,7 +22,7 @@ h1 {
 
 .thumbnails {
   display: grid;
-  grid-template-columns: 33.2% 33.2% 33.2%;
+  grid-template-columns: 33% 33% 33%;
   grid-gap: 5px;
   color: #444;
   margin-left: auto;
@@ -29,7 +30,6 @@ h1 {
 }
 
 .box {
-  /* background-color: #fff; */
   color: #000;
   height: 100%;
   border-radius: 5px;
@@ -44,4 +44,37 @@ img {
   padding: 0px;
   border-radius: 10px;
   background-color: white;
+}
+
+.power {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+
+.power iframe {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background-color: #212121;
+  border-radius: 10px
+}
+
+li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
 }
