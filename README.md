@@ -1,3 +1,6 @@
+<!-- TITLE: Rpi -->
+<!-- SUBTITLE: A quick summary of Rpi -->
+
 # Raspberry Pi Setup
 
 ## Operating System
@@ -17,13 +20,13 @@ It is **strongly** recommended that you change the default password for the pi u
 
 ## Device Configuration
 
-### Set Host Name
+### Set Hostname
 
 System Configuration can be done by issuing the `sudo raspi-config` command from the terminal. This will bring up a blue screen in which you can edit the device settings like the **Hostname**, **SSH connectivity**, and **VNC access** if you desire. In this case having both VNC and SSH are necessary for our use case. 
 
 #### List to edit in raspi-config
 
-* **Host name:** nocview**X**
+* **Hostname:** nocview**X**
   * Replace **X** with the current display number
 * Enable **SSH**
 * Enable **VNC**
@@ -72,7 +75,7 @@ xset s off
 xset s noblank
 xset -dpms
 
-# Allow quitting the X server with CTRL-ATL-Backspace
+# Allow quitting the X server with `CTRL`-`ALT`-`Backspace`
 setxkbmap -option terminate:ctrl_alt_bksp
 
 # Start Chromium in kiosk mode
@@ -96,7 +99,7 @@ Usage tips
 
 #### Setup Cron Jobs
 
-Cron can be run as the standard user and therefor does not require `sudo` to run.
+Cron can be run as the standard user and therefore does not require `sudo` to run.
 
 The format for cron is `m h dom mon dow command`
 
@@ -120,10 +123,10 @@ dow = day of week
 Insert the following code block and adjust time and days to match that of your desired schedule.
 
 ```text
-# This command will tun the display on without effecting dpms
+# This command will turn the display on without affecting dpms
 45 6 * * 1-5 /usr/bin/vcgencmd display_power 1
 
-# This command will tun the display off without effecting dpms
+# This command will turn the display off without affecting dpms
 15 17 * * 1-5 /usr/bin/vcgencmd display_power 0
 ```
 
@@ -138,10 +141,6 @@ These are not necessary, but can be useful when managing multiple devices over s
 [**Guide**](https://github.com/dylanaraps/neofetch/wiki/Installation)
 
 Neofetch is used to show current usages of the Pi itself. 
-
-`sudo add-apt-repository ppa:dawidd0811/neofetch`
-
-`echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list  326  curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| sudo apt-key add`
 
 `sudo apt update`
 
@@ -186,7 +185,7 @@ info "Memory" memory
 # info "Locale" locale  # This only works on glibc systems.
 ```
 
-To run as soon as an ssh session is initiated insert this at the bottom of the **~/.bashrc** file.
+To run as soon as an ssh session is initiated insert this at the bottom of the **/etc/bash.bashrc** file.
 
 ```
 if [[ -n $SSH_CONNECTION ]] ; then
